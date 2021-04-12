@@ -35,6 +35,7 @@ public class SorterStrategyComparator<T> {
     }
 
     public static void main(String[] args) {
+
         System.out.println("Cat Comparator");
         System.out.println("Height sort");
         Cat[] cats = {new Cat(1,4),new Cat(3,2),new Cat(2,1),new Cat(-1,9),new Cat(7,2),new Cat(1,2),new Cat(1,3)};
@@ -62,6 +63,16 @@ public class SorterStrategyComparator<T> {
 
 
         comparator.sort(dogs,new DogFoodComparator());
+        System.out.println(Arrays.toString(dogs));
+
+        System.out.println();
+        System.out.println("lambda 表达式 实现Dog food 逆序" );
+        comparator.sort(dogs,(o1,o2)-> Integer.compare(o2.food,o1.food));
+        System.out.println(Arrays.toString(dogs));
+
+        System.out.println("lambda 表达式 实现Dog food 顺序" );
+        comparator.sort(dogs, Comparator.comparingInt(o -> o.food));
+//        comparator.sort(dogs,(o1,o2)-> Integer.compare(o1.food,o2.food));
         System.out.println(Arrays.toString(dogs));
 
     }
