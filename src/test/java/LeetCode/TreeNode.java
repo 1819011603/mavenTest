@@ -1,39 +1,39 @@
 package LeetCode;
 
-public class TreeNode {
+public class TreeNode<T extends Comparable<T>> {
 
-    private int val;
-    private TreeNode left;
-    private TreeNode right;
+    public T val;
+    public TreeNode<T> left;
+    public TreeNode<T> right;
     TreeNode() {}
-    TreeNode(int val) { this(val,null,null); }
-    TreeNode(int val, TreeNode left, TreeNode right) {
+    TreeNode(T val) { this(val,null,null); }
+    TreeNode(T val, TreeNode<T> left, TreeNode<T> right) {
         this.val = val;
         this.left = left;
         this.right = right;
      }
 
-    public int getVal() {
+    public T getVal() {
         return val;
     }
 
-    public void setVal(int val) {
+    public void setVal(T val) {
         this.val = val;
     }
 
-    public TreeNode getLeft() {
+    public TreeNode<T> getLeft() {
         return left;
     }
 
-    public void setLeft(TreeNode left) {
+    public void setLeft(TreeNode<T> left) {
         this.left = left;
     }
 
-    public TreeNode getRight() {
+    public TreeNode<T> getRight() {
         return right;
     }
 
-    public void setRight(TreeNode right) {
+    public void setRight(TreeNode<T> right) {
         this.right = right;
     }
 
@@ -45,4 +45,5 @@ public class TreeNode {
                 ", right=" + right +
                 '}';
     }
+
 }
