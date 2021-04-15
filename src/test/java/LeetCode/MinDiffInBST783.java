@@ -47,6 +47,7 @@ public class MinDiffInBST783 {
         trees.inOrder(treeNode);
         trees.behindOrder(treeNode);
 
+
         Double[] objects1 = {5.6,0.7,70.1,null,2.0,6.1,null,1.1,3.1,null,8.1,null,null,null,4.0,null,11.1,null,null,9.11,12.0,null,10.0,null,13.1};
 //        Comparable[] objects = {27,null,34,null,58,50,null,44};
         Trees<Double> trees1 = new Trees<>();
