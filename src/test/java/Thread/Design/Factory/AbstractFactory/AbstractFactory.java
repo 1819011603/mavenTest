@@ -11,12 +11,12 @@ package Thread.Design.Factory.AbstractFactory;
 
 // 有很多种工厂 我统一将工厂其分成两组  低端工厂和高端工厂  低端和高端工厂都可以生产面罩和防护服（分组的思想 减少工厂个数）
 // 工厂模式就是三层抽象  共同父类  产品  和 工厂的共同父类（单一方法）  和  生产该产品的工厂  ---- 导致工厂数目过多
-// 抽象工厂就是四层抽象  共同父类  产品  、 产品所属的组的父类（多个方法） 和 每个组工厂（可以生产多种同组的产品）
+// 抽象工厂就是四层抽象  共同父类  产品  、 产品所属的组的父类（多个方法） 和 每个组工厂（可以生产多种同组的产品）  生产的产品数 = 组工厂数 * 方法数
 public interface AbstractFactory {
     IMask createMask();
     IProtectiveSuit createSuit();
 
-    public static void main(String[] args) {
+     static void main(String[] args) {
         AbstractFactory factoryA = new LowEndFactory();
         AbstractFactory factoryB = new HighEndFactory();
         //创建低端口罩
