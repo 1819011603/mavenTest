@@ -79,7 +79,7 @@ public class Trees<T extends Comparable<T>> {
         LinkedList<TreeNode<T>> list = new LinkedList<>();
         int i = 1,j,k;
 
-        root = new TreeNode<>( objects[0]);
+        root = new TreeNode<>(objects[0]);
         list.push(root);
         TreeNode<T> t;
         while ( i < objects.length && list.size() != 0){
