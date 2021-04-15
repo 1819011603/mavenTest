@@ -13,7 +13,8 @@ public class SorterStrategy<T extends Comparable<T>> {
     public void quickSort(T[] arr,int L, int R){
         if(L >= R)return;
         int l = L,r = R;
-        int index = (int)((R - L ) * Math.random() + L);
+        // [0,1] ->  [L,R+1) -> [L,R]
+        int index = (int)((R - L+1 ) * Math.random() + L);
         swap(arr,l,index);
         T temp = arr[l];
         while (l < r){
