@@ -74,6 +74,26 @@ public class Trees<T extends Comparable<T>> {
         }
         System.out.println();
     }
+    public String preOrderOnly(){
+        return preOrderOnly(this.root);
+
+    }
+    // 唯一确定一棵树的前序遍历
+    public String preOrderOnly(TreeNode<T> root){
+        StringBuilder s = new StringBuilder();
+        preOnly(root,s);
+        return new String(s);
+
+    }
+    private void preOnly(TreeNode<T> root,StringBuilder s){
+        if(root == null){
+            s.append("_#");
+            return;
+        }
+        s.append("_").append(root.val);
+        preOnly(root.left,s);
+        preOnly(root.right,s);
+    }
 
     public void arrayToTree(T[] objects){
         LinkedList<TreeNode<T>> list = new LinkedList<>();
