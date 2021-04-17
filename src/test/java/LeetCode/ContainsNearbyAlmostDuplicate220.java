@@ -54,7 +54,8 @@ public class ContainsNearbyAlmostDuplicate220 {
             if(map.containsKey(id+1) && Math.abs(nums[i]-map.get(id+1)) <w){
                 return true;
             }
-            // 都>=t  则把当前元素加入set
+
+            //不是相邻桶 或者相邻桶的两个元素也不满足 Math.abs(nums[i]-map.get(id-1)) < w   则把当前元素加入set
             map.put(id,(long)nums[i]);
             // 滑动窗口k i向右移 则set当中也要删id（id不可能有相等的 相等上面就返回true了）
             if(i >= k){
