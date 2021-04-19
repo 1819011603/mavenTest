@@ -67,7 +67,7 @@ public class KMP  {
 
 
         }
-        System.out.println(Arrays.toString(next));
+//        System.out.println(Arrays.toString(next));
         return next;
 
     }
@@ -92,7 +92,7 @@ public class KMP  {
 
 
         }
-        System.out.println(Arrays.toString(nextVal));
+//        System.out.println(Arrays.toString(nextVal));
         return nextVal;
 
     }
