@@ -46,7 +46,7 @@ public class KMP  {
         next[0] = -1;
         int i = 0; // i
         int j = -1;// j == next[i]
-        // 根据i 和 next[i] 求next[i+1]
+        // 根据i 和 next[i] 求next[i+1]  i+1 < s.length() ===> i < s.length()-1;
         while (i < s.length()-1){
             // j == -1 ---> next[i+1]=0  <===> next[i+1] = j+1;
             // next[i+1]= char[i] == char[next[i]]? next[i]+1  <=====> next[i+1] =  char[i] == char[j]? j+1;
@@ -79,6 +79,7 @@ public class KMP  {
         nextVal[0] = -1;
         int i = 0;
         int j = -1;
+
         while (i < s.length()-1){
             if(j == -1 || chars[i] == chars[j]){
                 ++i;
