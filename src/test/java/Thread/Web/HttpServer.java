@@ -25,38 +25,30 @@ public class HttpServer {
         Socket socket = null;
         InputStream input = null;
         OutputStream output = null;
-
-
-
-            try {
-                while (!shutdown){
-                socket = server.accept();
-                input = socket.getInputStream();
-                output = socket.getOutputStream();
-                Request request = new Request(input);
-                request.parse();
-                Response response = new Response(output);
-                response.setRequest(request);
-                response.sendStaticResource();
-                socket.close();
-                shutdown = request.getUrl().equalsIgnoreCase(SHUTDOWN_COMMAND);
-             }
-            }catch (IOException e){
-                e.printStackTrace();
-            }finally {
-                server.close();
-                assert socket != null;
-                socket.close();
-                assert input != null;
-                input.close();
-                assert output != null;
-                output.close();
-            }
-
-
-
-
-
+        try {
+            while (!shutdown){
+            socket = server.accept();
+            input = socket.getInputStream();
+            output = socket.getOutputStream();
+            Request request = new Request(input);
+            request.parse();
+            Response response = new Response(output);
+            response.setRequest(request);
+            response.sendStaticResource();
+            socket.close();
+            shutdown = request.getUrl().equalsIgnoreCase(SHUTDOWN_COMMAND);
+         }
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+            server.close();
+            assert socket != null;
+            socket.close();
+            assert input != null;
+            input.close();
+            assert output != null;
+            output.close();
+        }
 
     }
 }

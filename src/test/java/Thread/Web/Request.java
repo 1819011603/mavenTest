@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class Request {
-    private InputStream input;
+    private final InputStream input;
     private String url;
 
     public Request(InputStream input) {
