@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>index.html</title>
+    <script>
+        function changeImage() {
+            var image = document.getElementById("myImage");
+            if(image.src.match("1.jpg")){
+                image.src = "1.gif"
+            }else image.src = "1.jpg";
+        }
+    </script>
+</head>
+<body>
+    <p>index.html</p>
+    <a href="aaaa.html">aaaa.html</a>
+    <img src="1.jpg" onclick="changeImage()" id="myImage">
+</body>
+
+</html>
