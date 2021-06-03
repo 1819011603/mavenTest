@@ -13,6 +13,15 @@ public class MaxProfit63 {
         int[] price = new int[]{7,6,4,3,1};
         System.out.println(maxProfit(price));
     }
+
+    /**
+     * 思路：
+     * 假设当前的最小值为price[0]
+     * if max < cur- minn: max = cur- minn;
+     * if minn > cur: minn = cur;
+     * @param prices 股票价格
+     * @return 买卖一次的最大值
+     */
     public  static int maxProfit(int[] prices){
         if(prices == null || prices.length == 0)return 0;
         int minn = prices[0],max = Integer.MIN_VALUE;
