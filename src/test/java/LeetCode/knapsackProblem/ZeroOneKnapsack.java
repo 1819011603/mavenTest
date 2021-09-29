@@ -11,7 +11,7 @@ import java.util.List;
  */
 
 
-public class Knapsack01 {
+public class ZeroOneKnapsack {
     private static class Knapsack{
         int value;
         int weight;
@@ -26,10 +26,10 @@ public class Knapsack01 {
         list.add(new Knapsack(1,1));
         list.add(new Knapsack(2,1));
         list.add(new Knapsack(5,1));
-        System.out.println(new Knapsack01().knapsack(10,list));
-        System.out.println(new Knapsack01().knapsack1(10,list));
-        System.out.println(new Knapsack01().knapsack(8,list));
-        System.out.println(new Knapsack01().knapsack1(8,list));
+        System.out.println(new ZeroOneKnapsack().knapsack(10,list));
+        System.out.println(new ZeroOneKnapsack().knapsack1(10,list));
+        System.out.println(new ZeroOneKnapsack().knapsack(8,list));
+        System.out.println(new ZeroOneKnapsack().knapsack1(8,list));
     }
     /*
     01背包问题：

@@ -36,6 +36,7 @@ public class CompleteBackpack {
     }
 
     // O(VN)  N = knapsacks.size()
+    // 完全背包
     private int completeBackpack(int V, List<Knapsack> knapsacks) {
         int[] dp = new int[V+1];
 
@@ -53,6 +54,7 @@ public class CompleteBackpack {
         return dp[V];
     }
     // O(N*log(V))  N = knapsacks.size()
+    // 转化为 01 背包  2^k个包(1,2,...,2^k)
     private int completeBackpack1(int V, List<Knapsack> knapsacks) {
 
         int[] dp = new int[V+1];
@@ -63,6 +65,7 @@ public class CompleteBackpack {
             int k = 1;
             while (u > k){
                 // i >= knapsack.weight * k
+                // ZeroOneKnapsack(k* knapsack)
                 for (int i = V; i >= knapsack.weight * k; i--){
                     dp[i] = Math.max(dp[i-knapsack.weight*k ] + knapsack.value * k,dp[i]);
                 }

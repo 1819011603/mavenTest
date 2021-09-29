@@ -1,7 +1,5 @@
 package LeetCode;
 
-import javax.swing.tree.TreeNode;
-
 public class IsValidBST98 {
 
     static boolean ans;
