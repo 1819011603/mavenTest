@@ -6,7 +6,46 @@ package LeetCode;
  * @VERSION 1.0
  */
 public class L_23 {
+
+
     public ListNode mergeKLists(ListNode[] lists) {
+        return mergeKLists_DAC(lists,0,lists.length-1);
+    }
+    public static ListNode mergeKLists_DAC(ListNode[] lists,int left_index,int right_index){
+        if(left_index>right_index){
+            return null;
+        }
+        if(left_index==right_index){
+            return lists[left_index];
+        }
+        int mid = (left_index + right_index)/2;
+        return mergeTwoLists(mergeKLists_DAC(lists,left_index,mid),mergeKLists_DAC(lists,mid+1,right_index));
+    }
+    public static ListNode mergeTwoLists(ListNode node1,ListNode node2){
+        ListNode dummy = new ListNode();
+        ListNode cur = dummy;
+        while(node1!=null&&node2!=null) {
+            if(node1.val< node2.val){
+                cur.next = node1;
+                node1 = node1.next;
+            }
+            else {
+                cur.next = node2;
+                node2=node2.next;
+            }
+            cur = cur.next;
+        }
+        if(node1==null){
+            cur.next = node2;
+        }
+        else {
+            cur.next = node1;
+        }
+        return dummy.next;
+    }
+
+
+    public ListNode mergeKLists1(ListNode[] lists) {
         int n = lists.length;
         if (n == 0)return null;
         else if (n == 1)return lists[0];
